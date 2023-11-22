@@ -17,6 +17,11 @@ I've been actively involved in Flutter development for approximately a year now,
 - **`main`**: This branch is intended for finished and tested code snippets. Code in this branch is expected to be stable and functional.
 - **`dev`**: The development branch serves as a sandbox where not all features may be working. It's a space for ongoing experiments and work in progress.
 
+## Contributions
+Feel free to open issues, submit pull requests, or provide feedback on anything you find here. I welcome collaboration and learning from the community!
+
+## Happy coding! 🚀🃏
+
 ## Project Structure
 
 TO DO...
