@@ -12,6 +12,16 @@ I've been actively involved in Flutter development for approximately a year now,
 - **Experimentation**: Test various Flutter components, libraries, and design patterns to gain a deeper understanding of their functionality.
 - **Knowledge Sharing**: Document my learning process and share insights with the community.
 
+## Branches
+
+- **`main`**: This branch is intended for finished and tested code snippets. Code in this branch is expected to be stable and functional.
+- **`dev`**: The development branch serves as a sandbox where not all features may be working. It's a space for ongoing experiments and work in progress.
+
+## Contributions
+Feel free to open issues, submit pull requests, or provide feedback on anything you find here. I welcome collaboration and learning from the community!
+
+## Happy coding! 🚀🃏
+
 ## Project Structure
 
 TO DO...
