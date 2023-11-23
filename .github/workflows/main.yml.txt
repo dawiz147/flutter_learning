@@ -6,23 +6,14 @@ on:
       - DEV
 
 jobs:
-  copy-web:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Copy web to online_preview
-        run: |
-          cp -R flutter_learning/flutter_learning_playground/web/* flutter_learning/flutter_learning_playground/online_preview/
-        working-directory: .
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "dawiz147@gmail.com"
-          git add flutter_learning/flutter_learning_playground/online_preview/*
-          git commit -m "Update online_preview with web content"
-          git push origin online_preview
-        working-directory: .
+    - name: Perform Checkout
+      uses: actions/checkout@v2
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./flutter_learning_playground/web
+        publish_branch: online_preview
