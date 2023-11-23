@@ -1,19 +1,21 @@
-name: Copy Web to online_preview
-
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
       - DEV
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-    - name: Perform Checkout
-      uses: actions/checkout@v2
+    - uses: actions/checkout@DEV
+
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./flutter_learning_playground/web
-        publish_branch: online_preview
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        BRANCH: online_preview
+        FOLDER: flutter_learning_playground/web
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TARGET_DIR: www
