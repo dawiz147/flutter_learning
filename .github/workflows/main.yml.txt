@@ -3,7 +3,7 @@ name: Copy Web to online_preview
 on:
   push:
     branches:
-      - main
+      - DEV
 
 jobs:
   copy-web:
