@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning_playground/constants/errors_texts.dart';
 import 'package:flutter_learning_playground/models/category.dart';
+import 'package:flutter_learning_playground/widgets/error_dialog.dart';
 
 class CategoryGridItem extends StatelessWidget {
   final Category category;
@@ -9,11 +11,8 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) => const AlertDialog(
-                    content: Text('Not implemented yet.'),
-                  ));
+          ErrorDialog.showErrorDialog(
+              context, ErrorsTexts.notImplementedYetMessage);
         },
         splashColor: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),
