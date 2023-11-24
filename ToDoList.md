@@ -2,3 +2,6 @@
 
 :x: Create alert dialog  
 :x: Online preview of application
+
+
+## To do list is no longer used. Tasks and information can be found in the project tab!
