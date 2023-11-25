@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning_playground/constants/errors_texts.dart';
+import 'package:flutter_learning_playground/constants/message_texts.dart';
 import 'package:flutter_learning_playground/models/category.dart';
-import 'package:flutter_learning_playground/widgets/error_dialog.dart';
+import 'package:flutter_learning_playground/widgets/message_dialog.dart';
 
 class CategoryGridItem extends StatelessWidget {
   final Category category;
@@ -11,8 +11,8 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          ErrorDialog.showErrorDialog(
-              context, ErrorsTexts.notImplementedYetMessage);
+          MessageDialog.showInfoDialog(
+              context, MessageTexts.notImplementedYetMessage);
         },
         splashColor: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(10),

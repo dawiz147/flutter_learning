@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning_playground/constants/errors_texts.dart';
+import 'package:flutter_learning_playground/constants/message_texts.dart';
 
-enum ErrorType {
-  warning,
-  error,
-}
+enum MessageType { warning, error, info }
 
-class ErrorDialog {
+class MessageDialog {
   static void showErrorDialog(BuildContext context, String errorMessage) {
-    _showDialog(context, errorMessage, ErrorType.error);
+    _showDialog(context, errorMessage, MessageType.error);
   }
 
   static void showWarningDialog(BuildContext context, String warningMessage) {
-    _showDialog(context, warningMessage, ErrorType.warning);
+    _showDialog(context, warningMessage, MessageType.warning);
+  }
+
+  static void showInfoDialog(BuildContext context, String infoMessage) {
+    _showDialog(context, infoMessage, MessageType.info);
   }
 
   static void _showDialog(
-      BuildContext context, String message, ErrorType type) {
+      BuildContext context, String message, MessageType type) {
     IconData icon;
     Color color;
     String title;
 
     switch (type) {
-      case ErrorType.warning:
+      case MessageType.warning:
         icon = Icons.warning;
         color = Colors.orange;
-        title = ErrorsTexts.warningMessage;
+        title = MessageTexts.warningMessage;
         break;
-      case ErrorType.error:
+      case MessageType.error:
         icon = Icons.error;
         color = Colors.red;
-        title = ErrorsTexts.errorMessage;
+        title = MessageTexts.errorMessage;
+        break;
+      case MessageType.info:
+        icon = Icons.info;
+        color = Colors.blue;
+        title = MessageTexts.infoMessage;
+        break;
+      default:
+        icon = Icons.help;
+        color = Colors.red;
+        title = MessageTexts.notImplementedTypeMessage;
         break;
     }
 
@@ -51,7 +62,7 @@ class ErrorDialog {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text(ErrorsTexts.okMessage),
+              child: const Text(MessageTexts.okMessage),
             ),
           ],
         );
@@ -59,8 +70,3 @@ class ErrorDialog {
     );
   }
 }
-
-// Przykład użycia:
-// ErrorDialog.showErrorDialog(context, 'To jest komunikat o błędzie.');
-// lub
-// ErrorDialog.showWarningDialog(context, 'To jest komunikat ostrzeżenia.');
