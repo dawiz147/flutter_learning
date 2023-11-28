@@ -11,7 +11,7 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          MessageDialog.showInfoDialog(
+          MessageDialog.showWarningDialog(
               context, MessageTexts.notImplementedYetMessage);
         },
         splashColor: Theme.of(context).primaryColor,

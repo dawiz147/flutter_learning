@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning_playground/data/dummy_data_categories.dart';
 import 'package:flutter_learning_playground/widgets/category_grid_item.dart';
+import 'package:flutter_learning_playground/widgets/custom_drawer.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -12,6 +13,7 @@ class CategoriesScreen extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text('Pick category'),
         ),
+        drawer: const Drawer(child: CustomDrawer()),
         body: GridView(
           padding: const EdgeInsets.all(24),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
